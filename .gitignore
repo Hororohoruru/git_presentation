@@ -1,0 +1,5 @@
+# Notebook
+.ipynb_checkpoints/*
+
+# Reveal.js
+reveal.js/*
