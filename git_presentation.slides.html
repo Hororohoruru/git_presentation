@@ -14731,7 +14731,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Track every change/addition ($\it i.e.$ <strong>comits</strong>)</li>
+<li>Track every change/addition ($\it i.e.$ <strong>commits</strong>)</li>
 <li>Going back to a previous version</li>
 <li>Use <strong>branch</strong> to develop features in parallel</li>
 </ul>
@@ -14873,8 +14873,33 @@ Because of your academic or student status you can get <strong>Github Pro for fr
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Create a local repo from scratch</p>
-<div class="highlight"><pre><span></span>git init 
+<h2 id="Install-Git-on-your-machine">Install Git on your machine<a class="anchor-link" href="#Install-Git-on-your-machine">&#182;</a></h2><ul>
+<li>On Linux from a terminal:<div class="highlight"><pre><span></span>sudo apt update
+sudo apt install git-all
+</pre></div>
+</li>
+<li>On Windows:  <ul>
+<li>Download it from <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
+<li>Run the installer</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Create-a-local-repo-from-scratch">Create a local repo from scratch<a class="anchor-link" href="#Create-a-local-repo-from-scratch">&#182;</a></h2><blockquote><p>Enter commands in GitBash for Windows and on terminal for Linux</p>
+</blockquote>
+<div class="highlight"><pre><span></span>mkdir mynewrepo <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mynewrepo
+git init 
+ECHO &gt;&gt; README.md
 git add README.md
 git commit -m <span class="s2">&quot;Add README&quot;</span>
 </pre></div>
@@ -14882,14 +14907,45 @@ git commit -m <span class="s2">&quot;Add README&quot;</span>
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Connect it ot Github</p>
+<h2 id="Connect-your-machine-with-GitHub">Connect your machine with GitHub<a class="anchor-link" href="#Connect-your-machine-with-GitHub">&#182;</a></h2><blockquote><p>First you need to create an account on <a href="https://github.com">https://github.com</a><br>
+Then we will need <strong>SSH key</strong> to have a secure and authentified connection</p>
+</blockquote>
+<ol>
+<li>In terminal or GitBash, generate SSH keys:  <div class="highlight"><pre><span></span>ssh-keygen -t rsa -C <span class="s2">&quot;your_email@example.com&quot;</span>
+</pre></div>
+Use same email as registred on GitHub. Then press <code>Enter</code> two times (no need to set a password).</li>
+</ol>
+<ol>
+<li>Then open the generated (public) key to share it with GitHub:<div class="highlight"><pre><span></span>notepad ~/.ssh/id_rsa.pub
+</pre></div>
+</li>
+<li><p>On GitHub website go to: <strong>Settings</strong> &gt; <strong>SSH and GPG Keys</strong>. Click on <strong>New SSH key</strong> and enter a title.</p>
+</li>
+<li><p>In the field <strong>Key</strong> paste all the contents of the file <code>id_rsa.pub</code> that you have just opened, beginning at <code>ssh-ras ...</code> up to your email (including it).</p>
+</li>
+<li>Click <strong>Add SSH key</strong></li>
+</ol>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Connect-your-local-repo-to-GitHub">Connect your local repo to GitHub<a class="anchor-link" href="#Connect-your-local-repo-to-GitHub">&#182;</a></h2><blockquote><p>As you have setup a secured SSH key, no need for password</p>
+</blockquote>
+<p>Go back to you terminal where you have initialized your local repo:</p>
 <div class="highlight"><pre><span></span>git remote add origin git@github.com:username/new_repo
 git push -u origin master
 </pre></div>
@@ -14897,7 +14953,7 @@ git push -u origin master
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14908,7 +14964,7 @@ git push -u origin master
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14917,15 +14973,17 @@ git push -u origin master
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li>GitHub Desktop: from Github directly</li>
-<li>Gitkraken: the most comprehensive (requires GitHub Pro)<center>
-<img src="./img/gitkraken.jpeg" alt="drawing" style=left width='550' height='550'>
-</center></li>
+<li>Gitkraken: the most comprehensive (requires GitHub Pro)</li>
 </ul>
+<center>
+<img src="./img/gitkraken.jpeg" alt="drawing" style=left width='550' height='550'>
+</center><blockquote><p>They also handle the SSH keys for you</p>
+</blockquote>
 
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14985,6 +15043,9 @@ git push -u origin master
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li>Manage and maintain the $\LaTeX$ code of your thesis 🤓</li>
+<li>Overleaf supports direct sync with GitHub to import existing repos or create one based on current project.<blockquote><p>This direct sync also allows to backup your Overleaf projects</p>
+</blockquote>
+</li>
 </ul>
 
 </div>
